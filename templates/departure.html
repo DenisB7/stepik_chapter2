@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="display-5 mt-4">Летим {% for key, value in departure.items %}{% if tours.1.departure == key %}{{ value }}{% endif %}{% endfor %}</h1>
+    <p class="mb-4">Найдено {{ tours|length }} туров, от {{ prices|first }} до {{ prices|last }} и от {{ nights|first }} ночей до {{ nights|last }} ночей</p>
+    <!-- CARDS -->
+    <div class="row mt-5">
+      {% for key, value in tours.items %}
+      {% if value is not None %}
+      <div class="col-4">
+        <div class="card mb-4">
+          <img src="{{ value.picture }}" class="card-img-top img-fluid" alt="">
+          <div class="card-body">
+            <h2 class="h5 card-title">{{ value.title }}</h2>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="/tour/{{ value.id }}/" class="btn btn-sm btn-primary">Подробнее</a>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+{% endblock %}
