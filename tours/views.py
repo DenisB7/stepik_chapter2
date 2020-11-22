@@ -43,8 +43,7 @@ class TourView(View):
 
 
 def custom_handler404(request, exception):
-    return HttpResponseNotFound('404 ошибка - ошибка на стороне сервера 
-                                '(страница не найдена)')
+    return HttpResponseNotFound('404 ошибка - ошибка на стороне сервера (страница не найдена)')
 
 
 def custom_handler500(request):
