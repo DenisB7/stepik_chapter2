@@ -16,11 +16,11 @@ class MainView(View):
             pictures_get = value.get('picture')
             picture_list.append(pictures_get)
             id_list.append(key)
-        titl_pic_random = {
+        id_titl_pic_random = {
             'tours': title_list,
             'picture': picture_list,
             'id': id_list,
             'subtitle': data.subtitle,
             'description': data.description
         }
-        return render(request, 'index.html', context=titl_pic_random)
+        return render(request, 'index.html', context=id_titl_pic_random)
