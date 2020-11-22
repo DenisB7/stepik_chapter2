@@ -5,9 +5,6 @@ from django.views import View
 import data
 
 
-# 1-й вариант
-
-
 class DepartureView(View):
 
     def get(self, request, departure):
